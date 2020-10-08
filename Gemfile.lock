@@ -45,6 +45,8 @@ GEM
       parser (>= 2.7.1.5)
     ruby-progressbar (1.10.1)
     unicode-display_width (1.7.0)
+    xpath (3.2.0)
+      nokogiri (~> 1.8)
 
 PLATFORMS
   ruby
@@ -56,9 +58,10 @@ DEPENDENCIES
   pry
   rspec
   rubocop
+  xpath
 
 RUBY VERSION
-   ruby 2.7.1p83
+   ruby 2.6.3p62
 
 BUNDLED WITH
    2.1.4

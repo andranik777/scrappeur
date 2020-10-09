@@ -1,7 +1,4 @@
-require 'rubocop'
-require 'rspec'
 require 'nokogiri'
-require 'pry'
 require 'open-uri'
 
 def trader

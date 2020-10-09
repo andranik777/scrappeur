@@ -1,7 +1,6 @@
-require 'rubygems'
+ require 'rubygems'
 require 'nokogiri'  
 require 'open-uri'
-require 'xpath'
 
 
 def get_townhall_email(townhall_url)
@@ -18,7 +17,7 @@ end
 
 #on collecte toutes les URLs des villes du Val d'Oise
 def get_townhall_urls
-	page = Nokogiri::HTML(open("http://annuaire-des-mairies.com/val-d-oise.html"))
+	page = Nokogiri::HTML(URI.open("http://annuaire-des-mairies.com/val-d-oise.html"))
 	arr_url = []
 
 	urls = page.xpath('//*[@class="lientxt"]/@href') 
@@ -27,6 +26,7 @@ def get_townhall_urls
 		url = "http://annuaire-des-mairies.com" + url.text[1..-1] 
 		arr_url.push(url)		
 	}
+	#print  arr_url
 	return arr_url 
 end
 
@@ -37,5 +37,5 @@ def perform
 	#/pour chaque URL d'une ville du Val d'Oise, on associe l'adresse mail de la mairie
 end 
 
-
+#get_townhall_urls
 perform
